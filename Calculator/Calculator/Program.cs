@@ -51,6 +51,7 @@ namespace Calculator
             double number1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter your Second number.");
             double number2 = double.Parse(Console.ReadLine());
+
             double result = 0;
 
             switch (symbol)
@@ -65,6 +66,11 @@ namespace Calculator
                     result = number1 * number2;
                     break;
                 case "/":
+                    if (number2 == 0)
+                    {
+                        Console.WriteLine("Cannot divide by 0");
+                        return;
+                    }
                     result = number1 / number2;
                     break;
                 default:
